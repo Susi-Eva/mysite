@@ -199,13 +199,10 @@ def main(query):
     wtd.append(l) # [i+1] = defenisi nomor dokumen; score = wtd
     #         print(score)
 
-
     hasil = []
     hasil.append(sorted(wtd[0], key = lambda x : x['score'], reverse = True))
 
-    top_result = hasil[0][:9]
-    N = len(top_result)
-    return top_result, N
+    return hasil
 
 def detail(nomor):
     tree = ElementTree()
