@@ -53,7 +53,7 @@ def generate_ngrams(data, n):
 def main(query):
 
     tree = ElementTree()
-    tree.parse("apps/data/KP.xml")
+    tree.parse("apps/data/BukuNyanyianHKBP.xml")
 
     all_doc_no = []
     all_headline = []
@@ -191,7 +191,7 @@ def main(query):
             idx = all_doc_no[i]
             judul = all_headline[i]
             
-            dic['docno'] =idx
+            dic['docno'] = idx
             dic['judul'] = judul
             dic['score'] = score
             
@@ -207,7 +207,7 @@ def main(query):
 
 def detail(nomor):
     tree = ElementTree()
-    tree.parse("apps/data/KP.xml")
+    tree.parse("apps/data/BukuNyanyianHKBP.xml")
 
     all_doc_no = []
     all_headline = []
@@ -233,8 +233,6 @@ def detail(nomor):
     for i in range(N_DOC):
         check = all_doc_no[i]
         if check == id:
-            text.append(all_text[i])
-            judul.append(all_headline[i])
-        print(text)
-
-    return text,judul
+            text = all_text[i]
+            judul = all_headline[i]
+            return text,judul

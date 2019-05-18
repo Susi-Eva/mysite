@@ -26,24 +26,22 @@ def lyric(request,id):
     }
     return render(request, 'apps/lyric.html', content)
 
-def lyric2(request, nomor):
-
-    nomor = request.GET['id']
-    text,judul = main.detail(nomor)
+def lyric2(request, id):
+    text,judul = main2.detail(id)
 
     content={
-        'no': nomor,
+        'no': id,
         'judul':judul,
         'text':text
     }
     return render(request, 'apps/lyric2.html', content)
 
-def lyric3(request, nomor):
+def lyric3(request, id):
 
-    text,judul = main.detail(nomor)
+    text,judul = main3.detail(id)
 
     content={
-        'no': nomor,
+        'no': id,
         'judul':judul,
         'text':text
     }

@@ -53,7 +53,7 @@ def generate_ngrams(data, n):
 def main(query):
 
     tree = ElementTree()
-    tree.parse("apps/data/inre_riris.xml")
+    tree.parse("apps/data/NyanyianPujian.xml")
 
     all_doc_no = []
     all_headline = []
@@ -191,7 +191,7 @@ def main(query):
             idx = all_doc_no[i]
             judul = all_headline[i]
             
-            dic['docno'] =idx
+            dic['docno'] = idx
             dic['judul'] = judul
             dic['score'] = score
             
@@ -205,9 +205,9 @@ def main(query):
 
     return hasil
 
-def detail(id):
+def detail(nomor):
     tree = ElementTree()
-    tree.parse("apps/data/inre_riris.xml")
+    tree.parse("apps/data/NyanyianPujian.xml")
 
     all_doc_no = []
     all_headline = []
@@ -217,16 +217,22 @@ def detail(id):
         all_doc_no.append(node.text)
         
     for node in tree.iter("HEADLINE"):
+        # all_headline.append(node.text.replace("\n"," "))
         all_headline.append(node.text)
+        head = all_headline
         
     for node in tree.iter("TEXT"):
+        # all_text.append(node.text.replace("\n"," "))
         all_text.append(node.text)
 
     N_DOC = len(all_text)
     text = []
     judul=[]
+    hasil = []
+    id = str(nomor)
     for i in range(N_DOC):
-        if all_doc_no[i] == id:
-            text.append(all_text[i])
-            judul.append(all_headline[i])
+        check = all_doc_no[i]
+        if check == id:
+            text = all_text[i]
+            judul = all_headline[i]
             return text,judul
