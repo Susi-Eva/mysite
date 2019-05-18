@@ -203,7 +203,9 @@ def main(query):
     hasil = []
     hasil.append(sorted(wtd[0], key = lambda x : x['score'], reverse = True))
 
-    return hasil
+    top_result = hasil[0][:9]
+    N = len(top_result)
+    return top_result, N
 
 def detail(nomor):
     tree = ElementTree()

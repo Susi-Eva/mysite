@@ -37,14 +37,14 @@
   <section class="testimonials text-center bg-light">
     <div class="container">
       <h2 class="mb-5">Lagu yang sesuai dengan "{{ query }}"</h2>
-      {% if hasil %}
+      {% if {{length}} != 0 %}
       <div class="row">
         {% for i in hasil %}
           {% for j in i %}  
           
             <div class="col-lg-4">
               <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                <img class="img-fluid rounded-circle mb-3" src="../../static/img/hkbp.jpg" alt="">
+                <img class="img-fluid rounded-circle mb-3" src="../../static/img/NP.jpg" alt="">
                 <h5><a href="/lyric2/{{j.docno}}">Lagu No:{{ j.docno }}</a></h5>
                 <h5>"{{ j.judul }}"</h5>
                 <p class="font-weight-light mb-0">score :{{ j.score }}</p>

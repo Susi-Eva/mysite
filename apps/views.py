@@ -55,10 +55,11 @@ def result2(request):
     #     # print (key, value)
     if request.method == 'POST':
         query = request.POST['querysearch']
-        hasil = main2.main(query)
+        hasil, N = main2.main(query)
 
         content={
             'hasil':hasil,
+            'length': N,
             'query':query
         }
         return render(request, 'apps/result2.html',content)
@@ -70,10 +71,11 @@ def result3(request):
     #     # print (key, value)
     if request.method == 'POST':
         query = request.POST['querysearch']
-        hasil = main3.main(query)
+        hasil, N = main3.main(query)
 
         content={
             'hasil':hasil,
+            'length': N,
             'query':query
         }
         return render(request, 'apps/result3.html',content)
@@ -85,10 +87,11 @@ def result(request):
     #     # print (key, value)
     if request.method == 'POST':
         query = request.POST['querysearch']
-        hasil = main.main(query)
+        hasil, N = main.main(query)
 
         content={
             'hasil':hasil,
+            'length': N,
             'query':query
         }
         return render(request, 'apps/result.html',content)
