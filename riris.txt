@@ -1,0 +1,4 @@
+- Pada halaman 31 terjadi conflicting statements.
+- Apakah dengan jumlah commit yang tinggi, memiliki pengaruh terhadap kualitas software dan performance?
+- Apa hubungan function point, kolaborasi dan accepted pull request?
+- Perbaikan latar belakang, tujuan, ruang lingkup
